@@ -2,7 +2,7 @@ from twython import Twython # pip install twython
 import time # standard lib
 import settings
 import MySQLdb
-#from kafka import KafkaProducer, KafkaConsumer
+from kafka import KafkaProducer, KafkaConsumer
 import json
 import datetime
 
@@ -12,7 +12,7 @@ CONSUMER_SECRET = settings.consumer_secret
 ACCESS_KEY = settings.access_token
 ACCESS_SECRET = settings.access_secret
 
-
+#GET screen_name from mysql
 twitter = Twython(CONSUMER_KEY,CONSUMER_SECRET,ACCESS_KEY,ACCESS_SECRET)
 conn = MySQLdb.connect(
             host=settings.host,
@@ -20,8 +20,10 @@ conn = MySQLdb.connect(
             user=settings.user,
             passwd=settings.passwd,
             db=settings.db)
+
 cur = conn.cursor()
 cou = conn.cursor()
+#Select screen_name with id = 1
 screen_id = '1'
 sql = "select screen_name from twitter_user where api!='done' and id ='{}'".format(screen_id)
 cur.execute(sql)
@@ -39,11 +41,9 @@ global account
 try:
     for ulang in range(0,terus):
         try:
+            #parsing screen_name
             a = results[ulang]
             account = str(a).replace(",", "").replace("'", "").replace("(", "").replace(")", "")
-            #=================================================================================
-            # account = 'jahabarsadiq'
-            #=================================================================================
             print "=================+++++++=================="
             print account
             print "=================+++++++=================="
@@ -59,12 +59,13 @@ try:
             for tweet in user_timeline:
                 lis = [tweet['id']]
                 print lis
-            # lis = [467020906049835008,] ## this is the latest starting tweet id  #467020906049835008
+            ## this is the latest starting tweet id  #467020906049835008
             for i in range(0, 1): ## iterate through all tweets
             ## tweet extract method with the last list item as the max_id
                 user_timeline = twitter.get_user_timeline(screen_name=account,count=hitung, include_retweets=True, max_id=lis[-1])
                 time.sleep(1) ## 5 minute rest between api calls
                 for tweet in user_timeline:
+                    #get date crawler
                     json_tweet = json.dumps(tweet)
                     now = datetime.datetime.now()
                     date_now = now.strftime("%A")
@@ -72,6 +73,7 @@ try:
                     year_now = now.strftime("%Y")
                     get_date = json.loads(json_tweet)
                     #================================================
+                    #get date tweet
                     tanggal = get_date['created_at']
                     tanggal = tanggal.split(' ')[0]
                     jam = get_date['created_at']
@@ -90,10 +92,11 @@ try:
                             print "======================================================"
                             print "TWITTER COY"
                             print "======================================================"
+                            #send tweet to kafka
                             for kafka in range(0, 20):
                                 try:
-#                                    producer = KafkaProducer(bootstrap_servers=settings.broker)
- #                                   producer.send(settings.kafka_topic, json_tweet)
+                                    producer = KafkaProducer(bootstrap_servers=settings.broker)
+                                    producer.send(settings.kafka_topic, json_tweet)
                                     print "======================================="
                                     print json_tweet
                                     print "SELESAI KIRIM"
