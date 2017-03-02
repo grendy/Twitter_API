@@ -13,20 +13,20 @@ consumer_secret3 = "YZxY4GkyxkdoF73rMyBjV1UFRVEWXh9BptjdMo8R6JeB1uoa2n"
 access_token3 = "826417343165128708-D1eEJ75220Vtj3tis9Oh8mProyGFwHW"
 access_secret3 = "NyLolZv65dahpyXTCroP6DXvakPWpGyyvPzWIT8c7ToDD"
 #======================================================================
-consumer_key4 = "baa56qjeMiUCMoEkxUtlwMQKK"
-consumer_secret4 = "WZXFYnU4AO8qxc0ndvlWK4GsZCb1mRaP7bIeOR3myo10hjEmWr"
-access_token4 = "826417343165128708-JFiJj2Tug00UDqoSnFH3SrpJqnFOQ3o"
-access_secret4 = "lzV1r9lxqnDS8MoheHpnhuvEsNZhpDO6arAUQCcak4BUu"
+consumer_key4 = "BsBoq6u543x3ZeFOx78ttPsZh"
+consumer_secret4 = "Ixj2bgJBE0QlPTS715Phu9kxIEaySVmQICnqmYrzYCNQVgzUup"
+access_token4 = "836854647843405828-s7XP5G55zdAmfFyC8hPzidegiBZAJvR"
+access_secret4 = "GaZwCQSNsz6z0O6OjjcTDg7oTmP6CZITiYuefPxBkuxdX"
 #======================================================================
-consumer_key5 = "8YC50A8jD6a4OMtUdoOLEiVLm"
-consumer_secret5 = "1M5u3R41Hka4HtX36IFVxzAIBbRdpSF00qGKx3KY2uRM4q4vkI"
-access_token5 = "826417343165128708-S3HV40uumIomRqtHzsuVlFxcjCBW9m1"
-access_secret5 = "bSopUGBrSqMBVDxxoLwZCMGhHa9A0NatOnwGxo9oyTKOa"
+consumer_key5 = "1e88hX2wsIw5RhWmO9QtlziYc"
+consumer_secret5 = "zmwAdm3PFuTsMKYZEZW9fSL0pLcj5e4XmIz2v8ZDEbj8dJnthj"
+access_token5 = "836843135250616320-gEVfn0kgVgpDlKtoEHjE8IKQSm2u9tj"
+access_secret5 = "trvF1NPKzS1eKZdgtqeMaK6KTjVolsX28PiTEfhVwJUws"
 #======================================================================
-consumer_key6 = "lkHxD6uud8nJr9PKfHOnbFtWY"
-consumer_secret6 = "nE6UMWmGYL2vqrHXiL2PWsuctIJseIB3LyiCWyOloNs0m28gZa"
-access_token6 = "826417343165128708-pQPWdzlq02IAvQpdYBAaF4sLVswjISI"
-access_secret6 = "YSPIxcabdBMRB2XLhAgcRqUxUgkysxWYXui43FOJ8bNqQ"
+consumer_key6 = "riA9R03KHcKyZ77Ko1RsyxpLp"
+consumer_secret6 = "89XQBbEfnNNbmnmJzbhU6O2eKjf6RR9mwuxIF7z06ZPSYHu9iv"
+access_token6 = "836886719089737729-LVJdsNA7ODKptgZBYt749WXgWFrV02i"
+access_secret6 = "tVvz0H9t4IMd5TZUUurE0hKQMIn4ORUvVaqiDeNq23gnG"
 #======================================================================
 host = '192.168.20.37'      #radical
 port = 3360                 #radical

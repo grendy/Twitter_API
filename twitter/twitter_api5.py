@@ -55,18 +55,11 @@ try:
                 hitung = 45
             else:
                 hitung = 30
-            user_timeline = twitter.search(q=account, result_type='recent',count=1)
-            # user_timeline = twitter.get_user_timeline(screen_name=account,count=1)
-            for tweet in user_timeline:
-                json_tweet = json.dumps(user_timeline)
-                coy = json.loads(json_tweet)
-                lis = coy['statuses'][0]['id']
-                print lis
             # lis = [467020906049835008,] ## this is the latest starting tweet id  #467020906049835008
             for i in range(0, 1): ## iterate through all tweets
             ## tweet extract method with the last list item as the max_id
                 user_timeline = twitter.search(q=account, result_type='recent',count=hitung,retweeted=True)
-		time.sleep(1)
+	        time.sleep(2)
                 user_timeline = json.dumps(user_timeline)
                 coy = json.loads(user_timeline)
                 user_timeline = coy['statuses']
@@ -75,7 +68,7 @@ try:
                     json_tweet = json.dumps(user_timeline)
                     coy = json.loads(json_tweet)
                     json_tweet = coy[indikator]
-		    json_twitter = json.dumps(json_tweet)
+	            json_twitter = json.dumps(json_tweet)
                     indikator += 1
                     now = datetime.datetime.now()
                     date_now = now.strftime("%A")
@@ -103,6 +96,7 @@ try:
                             print "======================================================"
                             for kafka in range(0, 20):
                                 try:
+#				    import pdb;pdb.set_trace()
                                     producer = KafkaProducer(bootstrap_servers=settings.broker)
                                     producer.send(settings.kafka_topic, json_twitter)
                                     print "======================================="
@@ -125,5 +119,3 @@ try:
             pass
 except:pass
 conn.close()
-
-

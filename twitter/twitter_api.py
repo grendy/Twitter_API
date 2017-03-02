@@ -2,7 +2,7 @@ from twython import Twython # pip install twython
 import time # standard lib
 import settings
 import MySQLdb
-from kafka import KafkaProducer, KafkaConsumer
+#from kafka import KafkaProducer, KafkaConsumer
 import json
 import datetime
 
@@ -92,8 +92,8 @@ try:
                             print "======================================================"
                             for kafka in range(0, 20):
                                 try:
-                                    producer = KafkaProducer(bootstrap_servers=settings.broker)
-                                    producer.send(settings.kafka_topic, json_tweet)
+#                                    producer = KafkaProducer(bootstrap_servers=settings.broker)
+ #                                   producer.send(settings.kafka_topic, json_tweet)
                                     print "======================================="
                                     print json_tweet
                                     print "SELESAI KIRIM"
