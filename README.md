@@ -1,6 +1,7 @@
 # Twitter_API
 Twitter_API using Twython
 #Requirement
+Python2.7 must be installed on the device
 ```bash
 pip install twython 
 pip install kafka 
