@@ -16,6 +16,7 @@ producer.send(settings.kafka_topic, json_tweet)
 Go to https://apps.twitter.com/ to register your app to get your api keys
 
 ##Running engine
+To running engine use crontab for automatic scheduling
 ```bash
 python2.7 twitter_api.py
 ```
