@@ -6,7 +6,8 @@ Python2.7 must be installed on the device
 pip install twython 
 pip install kafka 
 ```
-#Send data to kafka
+#Send data
+Send data to kafka 
 ```bash
 producer = KafkaProducer(bootstrap_servers=settings.broker)
 producer.send(settings.kafka_topic, json_tweet)
